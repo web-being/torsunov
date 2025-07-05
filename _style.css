@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Дополнительные стили для специфических элементов */
+.custom-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #f8f6f0 0%, #f5f2ea 100%);
+}
+
+.section-bg {
+  background-color: #faf9f6;
+}
+
+/* Анимация для плавной прокрутки */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Стили для кнопок */
+.btn-primary {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}

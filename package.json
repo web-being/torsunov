@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11"
+  },
+  "scripts": {
+    "start": "npx @tailwindcss/cli -i ./_style.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./input.css -o ./style.css --minify"
+  }
+}
