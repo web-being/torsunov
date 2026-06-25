@@ -42,10 +42,23 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   });
 }
 
-// Лайтбокс галереи: открываем фото поверх страницы, без перехода на новую вкладку
-const galLinks = [...document.querySelectorAll('.gallery a[href]')];
-if (galLinks.length) {
-  const srcs = galLinks.map((a) => a.getAttribute('href'));
+// Галерея: вкладки по годам (показываем галерею выбранного года)
+document.querySelectorAll('.gal-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const year = tab.dataset.year;
+    document.querySelectorAll('.gal-tab').forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-pressed', String(on));
+    });
+    document.querySelectorAll('.gallery[data-year]').forEach((g) => { g.hidden = g.dataset.year !== year; });
+  });
+});
+
+// Лайтбокс галереи: открываем фото поверх страницы, без перехода на новую вкладку.
+// Набор слайдов берётся из той галереи, по которой кликнули, — листание не выходит за её год.
+const galleries = [...document.querySelectorAll('.gallery')].filter((g) => g.querySelector('a[href]'));
+if (galleries.length) {
   const box = document.createElement('div');
   box.className = 'lightbox';
   box.setAttribute('role', 'dialog');
@@ -58,14 +71,17 @@ if (galLinks.length) {
   document.body.appendChild(box);
 
   const img = box.querySelector('img');
-  let i = 0;
+  let srcs = [], i = 0;
   const show = (n) => { i = (n + srcs.length) % srcs.length; img.src = srcs[i]; };
-  const open = (n) => { show(n); box.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const open = (links, n) => { srcs = links.map((a) => a.getAttribute('href')); show(n); box.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { box.classList.remove('open'); document.body.style.overflow = ''; };
 
-  galLinks.forEach((a, n) =>
-    a.addEventListener('click', (e) => { e.preventDefault(); open(n); })
-  );
+  galleries.forEach((gal) => {
+    const links = [...gal.querySelectorAll('a[href]')];
+    links.forEach((a, n) =>
+      a.addEventListener('click', (e) => { e.preventDefault(); open(links, n); })
+    );
+  });
   box.querySelector('.lb-close').addEventListener('click', close);
   box.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); show(i - 1); });
   box.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); show(i + 1); });
@@ -77,3 +93,33 @@ if (galLinks.length) {
     else if (e.key === 'ArrowRight') show(i + 1);
   });
 }
+
+// FAQ: плавное раскрытие <details> (нативный тег не анимирует высоту сам).
+// Стартуем от текущей высоты — клик на полпути плавно разворачивает анимацию;
+// таймер финализации сбрасывается при повторном клике, чтобы состояния не накладывались.
+document.querySelectorAll('.faq-item').forEach((item) => {
+  const summary = item.querySelector('summary');
+  const panel = item.querySelector('.faq-a');
+  if (!summary || !panel) return;
+  let timer;
+
+  summary.addEventListener('click', (e) => {
+    if (reduceMotion) return; // уважаем prefers-reduced-motion — нативное поведение
+    e.preventDefault();
+
+    const closing = item.open;
+    const start = panel.getBoundingClientRect().height; // 0, если закрыт (контент скрыт нативно)
+    item.open = true;                                   // контент должен быть в DOM, чтобы измерить
+    const end = closing ? 0 : panel.scrollHeight;
+
+    panel.style.height = start + 'px';
+    void panel.offsetHeight;                            // принудительный reflow фиксирует старт
+    panel.style.height = end + 'px';
+
+    clearTimeout(timer);
+    timer = setTimeout(() => {                          // длительность синхронна с transition .32s в .faq-a
+      panel.style.height = '';
+      if (closing) item.open = false;
+    }, 340);
+  });
+});
