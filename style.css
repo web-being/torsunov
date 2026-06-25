@@ -1389,6 +1389,14 @@ img {
     transform: none;
   }
 }
+@keyframes faqFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .faq-item::details-content {
     display: grid;
@@ -1400,6 +1408,11 @@ img {
   }
   .faq-item[open] .faq-a > * {
     animation: faqIn .4s ease both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-item[open] .faq-a > * {
+    animation: faqFade .3s ease both;
   }
 }
 .faq-a p {
