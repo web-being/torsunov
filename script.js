@@ -94,35 +94,4 @@ if (galleries.length) {
   });
 }
 
-// FAQ: плавное раскрытие <details> (нативный тег не анимирует высоту сам).
-// Стартуем от текущей высоты — клик на полпути плавно разворачивает анимацию;
-// таймер финализации сбрасывается при повторном клике, чтобы состояния не накладывались.
-document.querySelectorAll('.faq-item').forEach((item) => {
-  const summary = item.querySelector('summary');
-  const panel = item.querySelector('.faq-a');
-  if (!summary || !panel) return;
-  let timer;
-
-  summary.addEventListener('click', (e) => {
-    if (reduceMotion) return; // уважаем prefers-reduced-motion — нативное поведение
-    e.preventDefault();
-
-    const closing = item.open;
-    const start = panel.getBoundingClientRect().height; // 0, если закрыт (контент скрыт нативно)
-    item.open = true;                                   // контент должен быть в DOM, чтобы измерить
-    const end = closing ? 0 : panel.scrollHeight;
-
-    panel.style.height = start + 'px';
-    panel.style.opacity = closing ? '1' : '0';          // мягкое появление/исчезание вместе с высотой
-    void panel.offsetHeight;                            // принудительный reflow фиксирует старт
-    panel.style.height = end + 'px';
-    panel.style.opacity = closing ? '0' : '1';
-
-    clearTimeout(timer);
-    timer = setTimeout(() => {                          // длительность синхронна с transition в .faq-a
-      panel.style.height = '';
-      panel.style.opacity = '';
-      if (closing) item.open = false;
-    }, 420);
-  });
-});
+// FAQ open/close is animated purely in CSS (see ::details-content in the stylesheet) — no JS needed.

@@ -368,6 +368,15 @@ img {
   background: radial-gradient(ellipse, rgba(120, 75, 25, .22), transparent 70%);
   filter: blur(4px);
 }
+/* Mobile/tablet (<1024px): cap and center the portrait, and drop the gap below the hero */
+@media (max-width: 63.99rem) {
+  .hero .portrait {
+    max-width: clamp(16rem, 72vw, 22rem);
+    margin-inline: auto;
+  }
+  .hero > .wrap { padding-bottom: 0; }
+}
+
 /* Портрет «выходит» из героя — нижний край заходит под следующий блок (десктоп) */
 @media (min-width: 64rem) {
   .hero {
@@ -377,13 +386,13 @@ img {
   .hero .grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   }
-  .hero .order-2 {
+  .hero .hero-text {
     position: relative;
     z-index: 2;
   }
   .hero .portrait {
     align-self: end;
-    margin-bottom: clamp(-10rem, -3.5rem - 8vw, -5rem);
+    margin-bottom: clamp(-6rem, -3.5rem - 8vw, -5rem);
   }
   .hero + .section {
     position: relative;
@@ -1187,8 +1196,26 @@ img {
 }
 .faq-a {
   overflow: hidden;
+  min-height: 0;
   padding: 0 0 1.3rem;
-  transition: height .4s cubic-bezier(.22, 1, .36, 1), opacity .32s ease;
+}
+/* Answer content gently fades in when the panel opens */
+@keyframes faqIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* Animate the native <details> via its content pseudo-element: a grid row that
+     grows 0fr -> 1fr. Pure CSS, works in Chrome and Safari (::details-content);
+     browsers without it just open instantly. content-visibility keeps the content
+     painted while the row collapses on close. */
+  .faq-item::details-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .4s cubic-bezier(.22, 1, .36, 1), content-visibility .4s allow-discrete;
+  }
+  .faq-item[open]::details-content { grid-template-rows: 1fr; }
+  .faq-item[open] .faq-a > * { animation: faqIn .4s ease both; }
 }
 .faq-a p {
   max-width: 44rem;

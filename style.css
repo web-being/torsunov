@@ -6,8 +6,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -158,12 +156,6 @@
   }
 }
 @layer utilities {
-  .order-1 {
-    order: 1;
-  }
-  .order-2 {
-    order: 2;
-  }
   .flex {
     display: flex;
   }
@@ -181,21 +173,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .lg\:order-1 {
-    @media (width >= 64rem) {
-      order: 1;
-    }
-  }
-  .lg\:order-2 {
-    @media (width >= 64rem) {
-      order: 2;
-    }
   }
   .lg\:flex {
     @media (width >= 64rem) {
@@ -575,6 +552,15 @@ img {
   background: radial-gradient(ellipse, rgba(120, 75, 25, .22), transparent 70%);
   filter: blur(4px);
 }
+@media (max-width: 63.99rem) {
+  .hero .portrait {
+    max-width: clamp(16rem, 72vw, 22rem);
+    margin-inline: auto;
+  }
+  .hero > .wrap {
+    padding-bottom: 0;
+  }
+}
 @media (min-width: 64rem) {
   .hero {
     overflow: clip visible;
@@ -583,13 +569,13 @@ img {
   .hero .grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   }
-  .hero .order-2 {
+  .hero .hero-text {
     position: relative;
     z-index: 2;
   }
   .hero .portrait {
     align-self: end;
-    margin-bottom: clamp(-10rem, -3.5rem - 8vw, -5rem);
+    margin-bottom: clamp(-6rem, -3.5rem - 8vw, -5rem);
   }
   .hero + .section {
     position: relative;
@@ -1390,8 +1376,31 @@ img {
 }
 .faq-a {
   overflow: hidden;
+  min-height: 0;
   padding: 0 0 1.3rem;
-  transition: height .4s cubic-bezier(.22, 1, .36, 1), opacity .32s ease;
+}
+@keyframes faqIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .faq-item::details-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .4s cubic-bezier(.22, 1, .36, 1), content-visibility .4s allow-discrete;
+  }
+  .faq-item[open]::details-content {
+    grid-template-rows: 1fr;
+  }
+  .faq-item[open] .faq-a > * {
+    animation: faqIn .4s ease both;
+  }
 }
 .faq-a p {
   max-width: 44rem;
