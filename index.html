@@ -8,429 +8,308 @@
     <meta name="description" content="Три вечера с Олегом Торсуновым вживую: как распознать своё предназначение, раскрыть способности и понять, зачем вы живёте. 14–16 сентября 2026, Centre St-Pierre, Монреаль. Число мест ограничено.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+    <script>document.documentElement.classList.add('js')</script>
   </head>
 
-  <body class="bg-stone-50 text-gray-900 font-sans leading-relaxed">
-    <!-- Заголовок -->
-    <header class="bg-white shadow-sm border-b border-gray-100 max-lg:hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <!-- Логотип -->
-          <div class="flex-shrink-0">
-            <a href="#" class="text-xl font-bold text-gray-900 tracking-tight">Олег&nbsp;Торсунов</a>
-          </div>
-
-          <!-- Навигация -->
-          <nav class="hidden md:flex space-x-8">
-            <a href="#program" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Программа</a>
-            <a href="#lecturer" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Лектор</a>
-            <a href="#reviews" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Встречи</a>
-            <a href="#tickets" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Билеты</a>
-            <a href="#contacts" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Контакты</a>
-          </nav>
-
-          <!-- Социальные иконки -->
-          <!-- <div class="flex space-x-3">
-            <a href="#" class="text-gray-600 hover:text-gray-900">
-              <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                <span class="text-white text-xs">f</span>
-              </div>
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-900">
-              <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                <span class="text-white text-xs">@</span>
-              </div>
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-900">
-              <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                <span class="text-white text-xs">t</span>
-              </div>
-            </a>
-          </div> -->
-        </div>
+  <body>
+    <!-- Шапка -->
+    <header class="site-header" id="header">
+      <div class="wrap flex justify-between items-center" style="height:4.25rem">
+        <a href="#" class="brand">
+          <img src="img/logo.svg" alt="">
+          <span>Олег&nbsp;Торсунов</span>
+        </a>
+        <nav class="hidden lg:flex items-center" style="gap:2rem">
+          <a href="#program" class="nav-link">Программа</a>
+          <a href="#lecturer" class="nav-link">Лектор</a>
+          <a href="#reviews" class="nav-link">Встречи</a>
+          <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+        <a href="#tickets" class="btn-pill">Билеты</a>
       </div>
     </header>
 
-    <!-- Главная секция -->
-    <section class="hero-bg py-16 lg:py-24 overflow-clip">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Фото лектора -->
-          <div class="order-2 lg:order-1">
-            <img src="img/tors1.avif" alt="Олег Торсунов" class="w-full max-w-md mx-auto rounded-lg -mb-54 lg:-mr-20">
-          </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap section" style="padding-block:clamp(2.5rem,1.5rem+4vw,5rem)">
+        <div class="grid lg:grid-cols-2 items-center" style="gap:clamp(2rem,1rem+4vw,4rem)">
 
-          <!-- Информация -->
-          <div class="order-1 lg:order-2 max-w-sm">
-            <p class="text-sm font-semibold text-gray-600 mb-4">Три вечера вживую · Монреаль</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Олег<br>
-              Торсунов<br>
-              <span class="text-3xl lg:text-4xl">в Монреале</span>
+          <!-- Текст -->
+          <div class="order-2 lg:order-1" style="max-width:34rem">
+            <p class="eyebrow reveal" style="--d:60ms">Три вечера вживую · Монреаль</p>
+            <h1 class="display reveal" style="--d:140ms; margin-top:1.25rem">
+              Олег Торсунов
+              <span style="display:block; white-space:nowrap; font-size:.62em; color:var(--saffron-deep); margin-top:.15em">в&nbsp;Монреале</span>
             </h1>
-            <p class="text-lg text-gray-700 mb-2 leading-relaxed">
-              Семинар «Предназначение» — о том, как понять, зачем вы живёте, и распознать своё призвание.
+            <p class="lede reveal" style="--d:240ms; margin-top:1.5rem">
+              Семинар «Предназначение» — о самом тихом вопросе жизни: зачем я живу.
             </p>
-            <p class="text-base font-semibold text-gray-900 mb-8">
-              14–16 сентября 2026 · Centre St-Pierre, Монреаль
-            </p>
-            <a href="#tickets" class="btn-primary inline-flex items-center">
-              Зарегистрироваться
-            </a>
-            <div class="mt-6">
-              <a href="#program" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                Что будет на семинаре →
-              </a>
+            <div class="reveal" style="--d:340ms; margin-top:2rem">
+              <div class="date-chip">
+                <span class="nums">14–16</span>
+                <span class="meta"><b>сентября 2026</b><br>Centre St-Pierre · Монреаль</span>
+              </div>
+            </div>
+            <div class="flex items-center reveal" style="--d:440ms; gap:.5rem; margin-top:2rem; flex-wrap:wrap">
+              <a href="#tickets" class="btn btn-primary">Зарегистрироваться</a>
+              <a href="#program" class="btn btn-ghost">Что будет на семинаре <span class="arw">→</span></a>
+            </div>
+          </div>
+
+          <!-- Портрет на солнечном диске -->
+          <div class="order-1 lg:order-2 portrait cutout reveal" style="--d:200ms">
+            <img src="img/tors1.avif" alt="Олег Торсунов" class="cutout" style="width:100%; max-width:30rem; margin-inline:auto; display:block">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Вступление -->
+    <section class="section band-paper">
+      <div class="wrap-narrow">
+        <p class="reveal" style="font-family:var(--font-display); font-size:var(--step-2); line-height:1.32; color:var(--ink); text-wrap:balance">
+          14–16 сентября Олег Торсунов проведёт в Монреале живой семинар. Три вечера, когда можно
+          не смотреть лекцию на&nbsp;экране, а быть в зале — задать свой вопрос и услышать ответ лично.
+        </p>
+        <p class="prose reveal" style="--d:120ms; margin-top:1.75rem; max-width:42rem">
+          Вы когда-нибудь задумывались, зачем именно вы пришли в этот мир? Об этом и будет
+          говорить Олег Торсунов — спокойно, по существу, так, чтобы каждый нашёл свой ответ.
+        </p>
+      </div>
+    </section>
+
+    <!-- Программа: лента вечеров -->
+    <section id="program" class="section band-warm">
+      <div class="wrap">
+        <div style="max-width:42rem; margin-bottom:clamp(2.5rem,1.5rem+3vw,4rem)">
+          <p class="eyebrow reveal">Программа</p>
+          <h2 class="h-sec reveal" style="--d:80ms; margin-top:1rem">Что вас ждёт за три вечера</h2>
+          <p class="prose reveal" style="--d:160ms; margin-top:1rem">
+            Каждый вечер — живая лекция, ответы на вопросы и угощения.
+            Три темы ведут от «кто я и зачем?» к ясному ответу.
+          </p>
+        </div>
+
+        <div style="max-width:48rem">
+          <!-- Вечер 1 -->
+          <div class="eve reveal">
+            <div class="eve-day">
+              <span class="eve-num">14</span>
+              <span class="eve-month">сентября</span>
+              <span class="eve-time">18:30–22:00</span>
+            </div>
+            <div>
+              <div class="eve-list">
+                <p class="eve-item"><span class="tick"></span>Что такое предназначение</p>
+                <p class="eve-item"><span class="tick"></span>Типы предназначений</p>
+                <p class="eve-item"><span class="tick"></span>Как раскрыть свои способности и распознать свою природу</p>
+              </div>
+              <p class="eve-note">Ответы на вопросы с 18:30–19:00</p>
+            </div>
+          </div>
+
+          <!-- Вечер 2 -->
+          <div class="eve reveal" style="--d:90ms">
+            <div class="eve-day">
+              <span class="eve-num">15</span>
+              <span class="eve-month">сентября</span>
+              <span class="eve-time">18:30–22:00</span>
+            </div>
+            <div>
+              <div class="eve-list">
+                <p class="eve-item"><span class="tick"></span>Как реализовать свою свободу, творчество и нравственный долг</p>
+                <p class="eve-item"><span class="tick"></span>Как раскрыть свой внутренний потенциал и познать себя в служении обществу</p>
+                <p class="eve-item"><span class="tick"></span>Для чего мы живём и как ставить жизненные цели</p>
+              </div>
+              <p class="eve-note">Ответы на вопросы с 18:30–19:00</p>
+            </div>
+          </div>
+
+          <!-- Вечер 3 -->
+          <div class="eve reveal" style="--d:180ms">
+            <div class="eve-day">
+              <span class="eve-num">16</span>
+              <span class="eve-month">сентября</span>
+              <span class="eve-time">18:30–22:00</span>
+            </div>
+            <div>
+              <div class="eve-list">
+                <p class="eve-item"><span class="tick"></span>Миссия жизни — как понять свой путь</p>
+                <p class="eve-item"><span class="tick"></span>Цель и важность человеческой жизни</p>
+                <p class="eve-item"><span class="tick"></span>Как соединить предназначение, любовь к ближнему и прославление Бога</p>
+              </div>
+              <p class="eve-note">Ответы на вопросы с 18:30–19:00</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Описание семинара -->
-    <section class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            14–16 сентября Олег Торсунов проведёт в Монреале живой трёхдневный семинар. Три вечера,
-            когда можно не смотреть лекцию на экране, а быть в зале, задать свой вопрос и услышать ответ лично.
-          </p>
-          <p class="text-lg text-gray-700 leading-relaxed">
-            Вы когда-нибудь задумывались, в чём ваше истинное предназначение — зачем именно вы пришли в этот мир?
-            Об этом и будет говорить Олег Геннадьевич на семинаре «Предназначение»: спокойно, по существу
-            и так, чтобы каждый нашёл ответ для себя.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Программа мероприятий -->
-    <section id="program" class="section-bg py-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <div class="inline-flex items-center mb-4">
-            <svg class="w-6 h-6 mr-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            <h2 class="text-3xl font-bold text-gray-900">Что вас ждёт?</h2>
+    <!-- Факты: время / адрес / стоимость -->
+    <section class="section band-paper">
+      <div class="wrap">
+        <div class="facts reveal" style="border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:var(--shadow-warm); background:var(--paper-2)">
+          <div class="fact">
+            <div class="fact-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+            <h3>Время проведения</h3>
+            <p>14, 15 и 16 сентября (Пон, Вт и Ср).<br>С 18:30 до 22:00.<br>С 18:30 — ответы на вопросы.</p>
           </div>
-          <p class="text-lg text-gray-600">
-            Каждый вечер — живая лекция, ответы на ваши вопросы и угощения.
-            Три темы ведут от вопроса «кто я и зачем?» к ясному пониманию своего пути.
-          </p>
-        </div>
-
-        <div class="space-y-8 max-w-3xl mx-auto">
-          <!-- День 1 -->
-          <div class="flex flex-col md:flex-row md:items-start md:space-x-6">
-            <div class="flex-shrink-0 mb-4 md:mb-0 md:w-32">
-              <div class="text-sm font-semibold text-gray-900">14 сентября</div>
-              <div class="text-sm text-gray-600">18:30–22:00</div>
-            </div>
-            <div class="flex-1">
-              <ul class="space-y-2 mb-3">
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Что такое предназначение
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Типы предназначений
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Как раскрыть свои способности и распознать свою природу
-                </li>
-              </ul>
-              <p class="text-gray-600 text-sm">Ответы на вопросы с 18:30–19:00</p>
-            </div>
+          <div class="fact">
+            <div class="fact-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <h3>Адрес</h3>
+            <p>Centre St-Pierre, Salle Marcel-Pepin.<br>1212, rue Panet, Montréal, H2L 2Y7.<br>Парковка на территории.</p>
           </div>
-
-          <!-- День 2 -->
-          <div class="flex flex-col md:flex-row md:items-start md:space-x-6">
-            <div class="flex-shrink-0 mb-4 md:mb-0 md:w-32">
-              <div class="text-sm font-semibold text-gray-900">15 сентября</div>
-              <div class="text-sm text-gray-600">18:30–22:00</div>
-            </div>
-            <div class="flex-1">
-              <ul class="space-y-2 mb-3">
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Как реализовать свою свободу, творчество и нравственный долг
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Как раскрыть свой внутренний потенциал и познать себя в служении обществу
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Для чего мы живём и как ставить жизненные цели
-                </li>
-              </ul>
-              <p class="text-gray-600 text-sm">Ответы на вопросы с 18:30–19:00</p>
-            </div>
-          </div>
-
-          <!-- День 3 -->
-          <div class="flex flex-col md:flex-row md:items-start md:space-x-6">
-            <div class="flex-shrink-0 mb-4 md:mb-0 md:w-32">
-              <div class="text-sm font-semibold text-gray-900">16 сентября</div>
-              <div class="text-sm text-gray-600">18:30–22:00</div>
-            </div>
-            <div class="flex-1">
-              <ul class="space-y-2 mb-3">
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Миссия жизни — как понять свой путь
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Цель и важность человеческой жизни
-                </li>
-                <li class="flex items-start text-gray-800">
-                  <span class="ico-check w-5 h-5 mr-2 mt-1 flex-shrink-0"></span>
-                  Как соединить предназначение, любовь к ближнему и прославление Бога
-                </li>
-              </ul>
-              <p class="text-gray-600 text-sm">Ответы на вопросы с 18:30–19:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Информационные карточки -->
-    <section class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Время проведения -->
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
-              <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Время проведения</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              14, 15 и 16 сентября (Пон, Вт и Ср)<br>
-              С 18:30 до 22:00.<br>
-              С 18:30 — ответы на вопросы.
-            </p>
-          </div>
-
-          <!-- Адрес -->
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
-              <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Адрес</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Centre St-Pierre, Salle Marcel-Pepin.<br>
-              1212, rue Panet, Montréal, H2L 2Y7.<br>
-              Парковка на территории.
-            </p>
-          </div>
-
-          <!-- Стоимость -->
-          <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
-              <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Стоимость</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Билеты — ниже, в разделе <a href="#tickets">регистрация</a>, через Eventbrite.
-              Число мест в зале ограничено — лучше занять своё заранее.
-            </p>
+          <div class="fact">
+            <div class="fact-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg></div>
+            <h3>Стоимость</h3>
+            <p>Билеты — ниже, в разделе <a href="#tickets">регистрация</a>, через Eventbrite. Число мест в зале ограничено — лучше занять своё заранее.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Почему стоит прийти -->
-    <section class="section-bg py-16">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <div class="inline-flex items-center mb-4">
-            <span class="text-2xl mr-2">🌟</span>
-            <h2 class="text-3xl font-bold text-gray-900">Почему стоит прийти?</h2>
-          </div>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Этот семинар может стать началом важных перемен и дать знания, которые останутся с вами надолго.
-            Приходите, чтобы разобраться в главном, обрести ясность и встретить близких по духу людей.
+    <section class="section band-warm">
+      <div class="wrap-narrow">
+        <div style="max-width:40rem; margin-bottom:clamp(2.5rem,1.5rem+3vw,3.5rem)">
+          <p class="eyebrow reveal">Зачем приходить</p>
+          <h2 class="h-sec reveal" style="--d:80ms; margin-top:1rem">Что вы унесёте с собой</h2>
+          <p class="prose reveal" style="--d:160ms; margin-top:1rem">
+            Большинство так и не находит времени для главного вопроса. Эти три вечера — и есть время:
+            понять себя, найти ясность, встретить близких по духу.
           </p>
         </div>
 
-        <div class="space-y-6 w-fit mx-auto">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <span class="ico-check w-6 h-6"></span>
-            </div>
-            <p class="text-lg text-gray-700">Понять, в чём именно ваше предназначение — и как его раскрыть.</p>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <span class="ico-check w-6 h-6"></span>
-            </div>
-            <p class="text-lg text-gray-700">Получить ответ на свой личный вопрос — лично, в зале.</p>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <span class="ico-check w-6 h-6"></span>
-            </div>
-            <p class="text-lg text-gray-700">Увидеть, как соединить призвание, семью и долг перед близкими.</p>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <span class="ico-check w-6 h-6"></span>
-            </div>
-            <p class="text-lg text-gray-700">Провести три вечера среди людей, близких по духу.</p>
-          </div>
+        <div class="reasons">
+          <div class="reason reveal"><span class="n">1</span><p>Понять, в чём именно ваше предназначение — и как его раскрыть.</p></div>
+          <div class="reason reveal" style="--d:90ms"><span class="n">2</span><p>Задать свой вопрос — и услышать ответ лично, в зале.</p></div>
+          <div class="reason reveal" style="--d:180ms"><span class="n">3</span><p>Увидеть, как соединить призвание, семью и долг перед близкими.</p></div>
+          <div class="reason reveal" style="--d:270ms"><span class="n">4</span><p>Провести три вечера среди людей, близких по духу.</p></div>
         </div>
 
-        <p class="text-lg text-gray-600 leading-relaxed text-center mt-12">
+        <p class="prose reveal" style="margin-top:clamp(2.5rem,1.5rem+3vw,3.5rem); max-width:44rem">
           Подход Олега Торсунова — врача и многолетнего исследователя ведического знания —
-          помог тысячам людей по всему миру раскрыть свои таланты, найти своё место
-          и выстроить жизнь в согласии с собой.
+          помог тысячам людей раскрыть таланты, найти своё место и жить в согласии с собой.
         </p>
       </div>
     </section>
 
     <!-- О спикере -->
-    <section id="lecturer" class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Фото -->
-          <div class="order-2 lg:order-1">
-            <div class="text-center">
-              <img src="img/tors2.avif" alt="Олег Геннадьевич Торсунов" class="w-64 h-64 mx-auto rounded-full object-cover shadow-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-2">Олег Геннадьевич Торсунов</h3>
-              <p class="text-gray-600">Ведущий семинара и практикума</p>
+    <section id="lecturer" class="section band-paper">
+      <div class="wrap">
+        <div class="grid lg:grid-cols-2 items-center" style="gap:clamp(2.5rem,1.5rem+4vw,5rem)">
+          <div class="order-2 lg:order-1 text-center reveal">
+            <div class="speaker-portrait">
+              <img src="img/tors2.avif" alt="Олег Геннадьевич Торсунов">
             </div>
+            <h3 class="h-sub" style="margin-top:1.75rem">Олег Геннадьевич Торсунов</h3>
+            <p class="prose" style="margin-top:.4rem">Ведущий семинара и практикума</p>
           </div>
 
-          <!-- Информация -->
           <div class="order-1 lg:order-2">
-            <p class="text-gray-700 mb-6 leading-relaxed">
-              Олег Геннадьевич Торсунов — известный лектор и писатель, популяризатор здорового образа жизни,
-              автор уникальных оздоровительных методик, эксперт в области здоровья, личностного роста
-              и семейных отношений.
+            <p class="eyebrow reveal">Лектор</p>
+            <p class="lede reveal" style="--d:80ms; margin-top:1rem; margin-bottom:1.75rem">
+              Известный лектор и писатель, автор оздоровительных методик. Эксперт в области здоровья,
+              личностного роста и семейных отношений.
             </p>
-            <ul class="space-y-3 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Кандидат медицинских наук
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Старший преподаватель кафедры теории и методики оздоровительных технологий и физической культуры
-                Востока УралГУФК
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Специалист по общественному здоровью
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Известный во всем мире писатель и лектор
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Окончил Самарский государственный медицинский университет, интернатуру, а также Российский
-                университет дружбы народов
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Прожил несколько лет в Индии, где изучал наследие Вед
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Ведет научные исследования, направленные на улучшение качества жизни
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-600 mr-2">•</span>
-                Сотрудничает с кафедрой общественного здоровья и здравоохранения ММА имени И.М. Сеченова
-              </li>
-            </ul>
+            <div class="creds reveal" style="--d:160ms">
+              <p class="cred">Кандидат медицинских наук</p>
+              <p class="cred">Старший преподаватель кафедры теории и методики оздоровительных технологий и физической культуры Востока УралГУФК</p>
+              <p class="cred">Специалист по общественному здоровью</p>
+              <p class="cred">Известный во всём мире писатель и лектор</p>
+              <p class="cred">Окончил Самарский государственный медицинский университет, интернатуру, а также Российский университет дружбы народов</p>
+              <p class="cred">Прожил несколько лет в Индии, где изучал наследие Вед</p>
+              <p class="cred">Ведёт научные исследования, направленные на улучшение качества жизни</p>
+              <p class="cred">Сотрудничает с кафедрой общественного здоровья и здравоохранения ММА имени И. М. Сеченова</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Предыдущие встречи -->
-    <section id="reviews" class="section-bg py-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Предыдущие встречи</h2>
-          <p class="text-lg text-gray-600">Так проходят семинары Олега Торсунова — полные залы и живая, тёплая атмосфера.</p>
+    <section id="reviews" class="section band-warm">
+      <div class="wrap">
+        <div style="max-width:42rem; margin-bottom:clamp(2.5rem,1.5rem+3vw,3.5rem)">
+          <p class="eyebrow reveal">Встречи</p>
+          <h2 class="h-sec reveal" style="--d:80ms; margin-top:1rem">Так проходят семинары</h2>
+          <p class="prose reveal" style="--d:160ms; margin-top:1rem">
+            Полные залы и живая, тёплая атмосфера — фотографии с прошлых встреч Олега Торсунова.
+          </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <img src="img/1.avif" alt="Meeting 1" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/2.avif" alt="Meeting 2" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/3.avif" alt="Meeting 3" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/4.avif" alt="Meeting 4" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/5.avif" alt="Meeting 5" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/6.avif" alt="Meeting 6" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/7.avif" alt="Meeting 7" class="w-full h-48 object-cover rounded-lg">
-          <img src="img/8.avif" alt="Meeting 8" class="w-full h-48 object-cover rounded-lg">
+        <div class="gallery reveal">
+          <a class="gal gal-feat" href="img/4.avif" target="_blank"><img src="img/4.avif" alt="Зал на семинаре"></a>
+          <a class="gal" href="img/2.avif" target="_blank"><img src="img/2.avif" alt="Гости семинара"></a>
+          <a class="gal" href="img/3.avif" target="_blank"><img src="img/3.avif" alt="Лекция"></a>
+          <a class="gal" href="img/5.avif" target="_blank"><img src="img/5.avif" alt="Выступление"></a>
+          <a class="gal" href="img/6.avif" target="_blank"><img src="img/6.avif" alt="Общение"></a>
+          <a class="gal" href="img/1.avif" target="_blank"><img src="img/1.avif" alt="Зал"></a>
+          <a class="gal" href="img/7.avif" target="_blank"><img src="img/7.avif" alt="На сцене"></a>
+          <a class="gal gal-wide" href="img/8.avif" target="_blank"><img src="img/8.avif" alt="Слушатели"></a>
         </div>
       </div>
     </section>
 
     <!-- Регистрация -->
-    <section id="tickets" class="relative py-24 bg-cover bg-center" style="background-image: url('img/1.avif');">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl font-bold text-white mb-4">Регистрация</h2>
-        <p class="text-xl text-white mb-8">
-          Три вечера, которые могут изменить то, как вы видите свою жизнь.<br>
-          Число мест в зале ограничено — забронируйте своё.
+    <section id="tickets" class="cta-band section" style="padding-block:clamp(4.5rem,3rem+5vw,7.5rem)">
+      <img class="bg" src="img/1.avif" alt="">
+      <div class="inner wrap-narrow text-center">
+        <svg class="sun reveal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <h2 class="h-sec reveal" style="--d:80ms; color:#fff">Займите своё место в зале</h2>
+        <p class="reveal" style="--d:160ms; margin-top:1rem; font-size:var(--step-1); color:#fdf1df; line-height:1.5">
+          Три вечера. Один вопрос. Ваш ответ.<br>
+          Мест в зале немного — забронируйте заранее.
         </p>
-        <a href="https://www.eventbrite.ca/e/c-14-16-2026-tickets-1992319406978" class="bg-white text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition active:scale-[0.96]">
-          Купить билет
-        </a>
-        <p class="text-sm text-white mt-6">Парковка на территории центра</p>
+        <div class="reveal" style="--d:240ms; margin-top:2.25rem">
+          <a href="https://www.eventbrite.ca/e/c-14-16-2026-tickets-1992319406978" class="btn btn-light">Купить билет на Eventbrite</a>
+        </div>
+        <p class="reveal" style="--d:320ms; margin-top:1.5rem; font-size:var(--step--1); color:#f3dcc2">Парковка на территории центра · оплата на ресепшене</p>
       </div>
     </section>
 
     <!-- Место проведения -->
-    <section id="contacts" class="py-16 bg-gray-900 text-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Контактная информация -->
+    <section id="contacts" class="venue section">
+      <div class="wrap">
+        <div class="grid lg:grid-cols-2" style="gap:clamp(2.5rem,1.5rem+4vw,4rem)">
           <div>
-            <h2 class="text-3xl font-bold mb-6">Место проведения</h2>
-            <div class="space-y-4">
-              <p>
-                <strong>Адрес:</strong> Centre St-Pierre, Salle Marcel-Pepin, 1212, rue Panet, Montréal, H2L 2Y7
-              </p>
-              <p>
-                <strong>Начало в 18:30.</strong>
-              </p>
-              <p>
-                <strong>Телефон:</strong> 438-868-6308
-              </p>
-              <p>Парковка на территории. Билет оплачивается на ресепшене в центре.</p>
-              <div class="mt-6">
-                <a href="https://maps.google.com/maps?q=Centre+St-Pierre,+1212+rue+Panet,+Montréal,+H2L+2Y7" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition active:scale-[0.96]">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                  Открыть в Google Maps
-                </a>
+            <p class="eyebrow reveal" style="color:var(--gold)">Как добраться</p>
+            <h2 class="h-sec reveal" style="--d:80ms; margin-top:1rem; margin-bottom:1.75rem">Место проведения</h2>
+            <div class="reveal" style="--d:160ms; display:grid; gap:1.1rem; font-size:var(--step-0); color:#e9ddc9">
+              <div class="info-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span><strong>Centre St-Pierre</strong>, Salle Marcel-Pepin<br>1212, rue Panet, Montréal, H2L 2Y7</span>
               </div>
+              <div class="info-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span><strong>Начало в 18:30.</strong> Билет оплачивается на ресепшене в центре.</span>
+              </div>
+              <div class="info-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span><strong>Телефон:</strong> <a href="tel:+14388686308" class="maplink">438-868-6308</a></span>
+              </div>
+              <div class="info-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M5 13l4 4L19 7"/></svg>
+                <span>Парковка на территории центра.</span>
+              </div>
+            </div>
+            <div class="reveal" style="--d:240ms; margin-top:2rem">
+              <a href="https://maps.google.com/maps?q=Centre+St-Pierre,+1212+rue+Panet,+Montréal,+H2L+2Y7" target="_blank" class="btn btn-sage">
+                <svg style="width:1.1rem;height:1.1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Открыть в Google Maps
+              </a>
             </div>
           </div>
 
-          <!-- Карта -->
-          <div>
-            <div class="rounded-lg overflow-hidden shadow-lg">
+          <div class="reveal" style="--d:160ms">
+            <div class="map-frame">
               <iframe
                 src="https://maps.google.com/maps?q=Centre+St-Pierre,+1212+rue+Panet,+Montr%C3%A9al,+QC+H2L+2Y7&z=16&output=embed"
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
           </div>
@@ -438,14 +317,16 @@
       </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="bg-black text-white py-8">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <img src="img/logo.svg" alt="Клуб Благость Монреаль" class="h-16 w-auto mx-auto mb-4 invert" style="outline:none">
-        <p class="text-gray-400">Клуб Благость Монреаль</p>
+    <!-- Подвал -->
+    <footer class="foot">
+      <div class="wrap text-center" style="padding-block:2.75rem">
+        <img src="img/logo.svg" alt="Клуб Благость Монреаль">
+        <p style="margin-top:1rem; font-weight:600; color:var(--ink)">Клуб Благость Монреаль</p>
+        <p style="margin-top:.35rem; font-size:var(--step--1)">14–16 сентября 2026 · Семинар «Предназначение»</p>
       </div>
     </footer>
 
+    <script src="script.js" defer></script>
   </body>
 
 </html>
