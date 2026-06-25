@@ -321,6 +321,11 @@ img {
   line-height: 1.0;
   letter-spacing: -.02em;
 }
+@media (max-width: 40rem) {
+  .display {
+    font-size: clamp(2.2rem, .9rem + 6vw, 3.6rem);
+  }
+}
 .h-sec {
   font-size: var(--step-3);
   line-height: 1.08;
