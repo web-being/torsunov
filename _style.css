@@ -877,6 +877,8 @@ img {
 }
 .foot img {
   height: 3.5rem;
+  float: left;
+  margin-right: 2rem;
   width: auto;
   outline: none;
   opacity: .9;
