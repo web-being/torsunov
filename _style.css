@@ -120,6 +120,14 @@ img {
 @media (max-width: 40rem) {
   .display { font-size: clamp(2.2rem, .9rem + 6vw, 3.6rem); }
 }
+
+/* Кнопки героя: на узком экране — в столбик; когда помещаются в строку — рядом */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
 .h-sec {
   font-size: var(--step-3);
   line-height: 1.08;
@@ -367,7 +375,7 @@ img {
     z-index: 0;
   }
   .hero .grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   }
   .hero .order-2 {
     position: relative;
@@ -1180,7 +1188,7 @@ img {
 .faq-a {
   overflow: hidden;
   padding: 0 0 1.3rem;
-  transition: height .32s cubic-bezier(.4, 0, .2, 1);
+  transition: height .4s cubic-bezier(.22, 1, .36, 1), opacity .32s ease;
 }
 .faq-a p {
   max-width: 44rem;

@@ -113,13 +113,16 @@ document.querySelectorAll('.faq-item').forEach((item) => {
     const end = closing ? 0 : panel.scrollHeight;
 
     panel.style.height = start + 'px';
+    panel.style.opacity = closing ? '1' : '0';          // мягкое появление/исчезание вместе с высотой
     void panel.offsetHeight;                            // принудительный reflow фиксирует старт
     panel.style.height = end + 'px';
+    panel.style.opacity = closing ? '0' : '1';
 
     clearTimeout(timer);
-    timer = setTimeout(() => {                          // длительность синхронна с transition .32s в .faq-a
+    timer = setTimeout(() => {                          // длительность синхронна с transition в .faq-a
       panel.style.height = '';
+      panel.style.opacity = '';
       if (closing) item.open = false;
-    }, 340);
+    }, 420);
   });
 });
