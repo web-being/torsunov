@@ -579,8 +579,8 @@
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .transition-colors {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -603,6 +603,11 @@
       @media (hover: hover) {
         color: var(--color-gray-900);
       }
+    }
+  }
+  .active\:scale-\[0\.96\] {
+    &:active {
+      scale: 0.96;
     }
   }
   .max-lg\:hidden {
@@ -702,6 +707,23 @@
     }
   }
 }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+img {
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  outline-offset: -1px;
+}
+.hero-bg img {
+  outline: none;
+}
 .custom-shadow {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -723,11 +745,16 @@ html {
   color: white;
   padding: 12px 24px;
   border-radius: 25px;
-  transition: all 0.3s ease;
+  transition-property: background-color, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 .btn-primary:hover {
   background-color: #333;
   transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.96);
 }
 @property --tw-space-y-reverse {
   syntax: "*";

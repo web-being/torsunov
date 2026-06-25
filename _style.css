@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Сглаживание шрифтов на macOS — текст становится чётче */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Балансировка заголовков и устранение «сирот» в абзацах */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Тонкая обводка фото для единообразной глубины (кроме героя-выреза) */
+img {
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  outline-offset: -1px;
+}
+.hero-bg img {
+  outline: none;
+}
+
 /* Дополнительные стили для специфических элементов */
 .custom-shadow {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -31,10 +54,17 @@ html {
   color: white;
   padding: 12px 24px;
   border-radius: 25px;
-  transition: all 0.3s ease;
+  transition-property: background-color, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 
 .btn-primary:hover {
   background-color: #333;
   transform: translateY(-2px);
+}
+
+/* Тактильный отклик при нажатии */
+.btn-primary:active {
+  transform: translateY(0) scale(0.96);
 }
