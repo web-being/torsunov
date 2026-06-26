@@ -1377,7 +1377,9 @@ img {
 .faq-a {
   overflow: hidden;
   min-height: 0;
-  padding: 0 0 1.3rem;
+}
+.faq-a > * {
+  margin-bottom: 1.3rem;
 }
 @keyframes faqIn {
   from {

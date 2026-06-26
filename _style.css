@@ -1197,8 +1197,10 @@ img {
 .faq-a {
   overflow: hidden;
   min-height: 0;
-  padding: 0 0 1.3rem;
 }
+/* Bottom spacing rides inside the content so the grid row collapses fully on close
+   (padding on the grid item itself won't collapse and causes a jump at the end). */
+.faq-a > * { margin-bottom: 1.3rem; }
 /* Answer content reveal: fade + slight rise (default) or fade-only (reduced motion) */
 @keyframes faqIn {
   from { opacity: 0; transform: translateY(-5px); }
